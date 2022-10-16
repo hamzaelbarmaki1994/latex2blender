@@ -326,6 +326,10 @@ def import_latex(self, context, latex_code, custom_latex_path,
                 bpy.ops.object.gpencil_modifier_add(type='GP_THICK')
                 bpy.context.object.grease_pencil_modifiers["Thickness"].thickness_factor = 0.01
                 bpy.ops.object.gpencil_modifier_apply(modifier="Thickness")
+                bpy.ops.object.gpencil_modifier_add(type='GP_SIMPLIFY')
+                bpy.context.object.grease_pencil_modifiers["Simplify"].factor = 0.004
+                bpy.ops.object.gpencil_modifier_apply(modifier="Simplify")
+
                 if custom_material_bool:
                     bpy.context.selected_objects[0].material_slots[0].material = custom_material_value      
 
@@ -620,4 +624,3 @@ def unregister():
 
 if __name__ == "__main__":
     register()
- 
