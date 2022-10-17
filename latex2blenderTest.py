@@ -327,7 +327,8 @@ def import_latex(self, context, latex_code, custom_latex_path,
                 bpy.context.object.grease_pencil_modifiers["Thickness"].thickness_factor = 0.01
                 bpy.ops.object.gpencil_modifier_apply(modifier="Thickness")
                 bpy.ops.object.gpencil_modifier_add(type='GP_SIMPLIFY')
-                bpy.context.object.grease_pencil_modifiers["Simplify"].factor = 0.004
+                bpy.context.object.grease_pencil_modifiers["Simplify"].mode = 'SAMPLE'
+                bpy.context.object.grease_pencil_modifiers["Simplify"].length = 0.0149
                 bpy.ops.object.gpencil_modifier_apply(modifier="Simplify")
 
                 if custom_material_bool:
